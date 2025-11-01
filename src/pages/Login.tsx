@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/slices/store/store";
 import { loginUser, setIsLoggedIn } from "@/slices/authSlice";
 import { useNavigate } from "react-router-dom";
-import { getUserById } from "@/slices/users";''
+import { getUserById } from "@/slices/users";
+import Navbar from "@/components/Navbar"; // 1. Import the Navbar
 
 const Login = () => {
   const [loginid, setLoginid] = useState("");
@@ -19,7 +20,7 @@ const Login = () => {
       const role = localStorage.getItem("role");
       const user_id = localStorage.getItem("user_id");
 
-      console.log(token , role , user_id);
+      console.log(token, role, user_id);
 
       if (token && role && user_id) {
         try {
@@ -55,6 +56,8 @@ const Login = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+      <Navbar /> {/* 2. Add the Navbar component here */}
+
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
@@ -67,18 +70,7 @@ const Login = () => {
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/80"></div>
 
-      {/* Logo + Branding */}
-      <div className="absolute top-8 left-10 flex items-center gap-3 text-white z-20">
-        <img
-          src="/assets/images/ms.png"
-          alt="BSKF Logo"
-          className="w-12 h-12 rounded-lg object-cover shadow-lg border border-white/20"
-        />
-        <div>
-          <h1 className="font-bold text-xl tracking-wide">BSKF</h1>
-         
-        </div>
-      </div>
+      {/* 3. Logo + Branding section removed, as Navbar handles it */}
 
       {/* Login Card */}
       <div className="relative z-20 w-[95%] max-w-md p-8 rounded-2xl shadow-2xl backdrop-blur-lg bg-white/10 border border-white/20 text-white animate-fadeIn">
