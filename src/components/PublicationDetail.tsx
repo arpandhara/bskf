@@ -128,7 +128,7 @@ const PublicationDetail = () => {
         }
     };
 
-    const publication = publicationsData[id as keyof typeof publicationsData];
+    const publication = publicationsData[id as unknown as keyof typeof publicationsData];
 
     if (!publication) {
         return (

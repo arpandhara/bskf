@@ -15,6 +15,12 @@ import BudgetSection from "@/components/digital-pathshala/BudgetSection";
 import FooterSection from "@/components/digital-pathshala/FooterSection";
 import StickyDonateButton from "@/components/digital-pathshala/StickyDonateButton";
 import TestimonialSection from "@/components/digital-pathshala/TestimonialSection";
+import MotiveSection from "@/components/digital-pathshala/MotiveSection";
+import CurriculumWorkflowSection from "@/components/digital-pathshala/CurriculumWorkflowSection";
+import TeamSection from "@/components/digital-pathshala/TeamSection";
+import RippleEffectSection from "@/components/digital-pathshala/RippleEffectSection";
+import ImpactAchievedSection from "@/components/digital-pathshala/ImpactAchievedSection";
+import FundingRoundsSection from "@/components/digital-pathshala/FundingRoundsSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +28,7 @@ const DigitalPathshalaPage = () => {
     const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -69,10 +76,16 @@ const DigitalPathshalaPage = () => {
             <Navbar />
             <main className="relative">
                 <ImmersiveHero />
+                <MotiveSection />
+                <CurriculumWorkflowSection />
                 <StickyImageNarrative />
                 <TripleSHorizontalScroll />
                 <ProgramsShowcase />
+                <RippleEffectSection />
                 <RoadmapSection />
+                <TeamSection />
+                <ImpactAchievedSection />
+                <FundingRoundsSection />
                 <FAQSection />
                 <TestimonialSection />
                 <BudgetSection />
