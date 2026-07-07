@@ -27,7 +27,7 @@ const RoadmapSection = () => {
 
         // Cards Floating Animation
         const cards = gsap.utils.toArray('.roadmap-card');
-        cards.forEach((card: any, i) => {
+        cards.forEach((card: HTMLElement, i) => {
             gsap.fromTo(card,
                 { y: 100, opacity: 0, scale: 0.9 },
                 {

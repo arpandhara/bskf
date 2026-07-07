@@ -12,7 +12,7 @@ const BudgetSection = () => {
     // Animate numbers on scroll
     useEffect(() => {
         const counters = gsap.utils.toArray('.budget-counter');
-        counters.forEach((counter: any) => {
+        counters.forEach((counter: HTMLElement) => {
             const target = parseInt(counter.innerText);
             gsap.fromTo(counter, 
                 { innerText: 0 },
